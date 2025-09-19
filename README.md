@@ -1,43 +1,34 @@
-# Template for interTwin repositories
+# openEO run_oscar process sample
 
-This repository is to be used as a repository template for creating a new interTwin
-repository, and is aiming at being a clean basis promoting currently accepted
-good practices.
+This repository contains a sample tutorial on how to use the new run_oscar process in openEO.
 
-It includes:
+## Prerequisites
 
-- License information
-- Copyright and author information
-- Code of conduct and contribution guidelines
-- Templates for PR and issues
-- Code owners file for automatic assignment of PR reviewers
-- [GitHub actions](https://github.com/features/actions) workflows for linting
-  and checking links
+This is still in development so you need to install the proper branch of `openeo-processes-dask` and `openeo local processing`
 
-Content is based on:
+Clone the correct branch of `openeo-processes-dask`:
 
-- [Contributor Covenant](http://contributor-covenant.org)
-- [Semantic Versioning](https://semver.org/)
-- [Chef Cookbook Contributing Guide](https://github.com/chef-cookbooks/community_cookbook_documentation/blob/master/CONTRIBUTING.MD)
+```bash
+git clone --recurse-submodules -b run_oscar git@github.com:jzvolensky/openeo-processes-dask.git
+```
 
-## GitHub repository management rules
+```bash
+cd openeo-processes-dask
 
-All changes should go through Pull Requests.
+poetry install --all-extras
+```
 
-### Merge management
+Activate the virtual environment for processes-dask and install the local processing package:
 
-- Only squash should be enforced in the repository settings.
-- Update commit message for the squashed commits as needed.
+```bash
+pip install "openeo[localprocessing]"
+```
 
-### Protection on main branch
+Copy the the latest `run_oscar` process spec into the specs
 
-To be configured on the repository settings.
+```bash
+curl -L -o openeo-processes-dask/openeo_processes_dask/specs/openeo-processes/run_oscar.json https://raw.githubusercontent.com/jzvolensky/openeo-processes/run_oscar/run_oscar.json
 
-- Require pull request reviews before merging
-  - Dismiss stale pull request approvals when new commits are pushed
-  - Require review from Code Owners
-- Require status checks to pass before merging
-  - GitHub actions if available
-  - Other checks as available and relevant
-  - Require branches to be up to date before merging
-- Include administrators
+Then navigate to `OSCAR/openeo_oscar_dummy.ipynb` and enjoy. You may need to tweak your text editor settings to find the virtual environment as its not in the default location this way.
+
+
