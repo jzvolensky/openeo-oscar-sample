@@ -28,7 +28,6 @@ Copy the the latest `run_oscar` process spec into the specs
 
 ```bash
 curl -L -o openeo-processes-dask/openeo_processes_dask/specs/openeo-processes/run_oscar.json https://raw.githubusercontent.com/jzvolensky/openeo-processes/run_oscar/run_oscar.json
+```
 
 Then navigate to `OSCAR/openeo_oscar_dummy.ipynb` and enjoy. You may need to tweak your text editor settings to find the virtual environment as its not in the default location this way.
-
-
